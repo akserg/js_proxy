@@ -79,11 +79,13 @@ Next code print the current version of jQuery to console:
 
 #### Example 2. jQuery selectors
 jQuery selectors allows select and manipulate HTML element(s) based on their
+
 - id, 
 - classes, 
 - types, 
 - attributes, 
 - values of attributes
+
 All selectors in jQuery start with the dollar sign and parentheses: 
 
     /**
@@ -152,48 +154,54 @@ Actions and methods could be chained with jQuery. It allows you to run multiple 
 
 #### Eample 6. Get content and attributes
 With jQuery you could easy to access and manipulate elements and attributes:
+
 - text() - Returns the text content of selected elements
 - html() - Returns the content of selected elements (including HTML markup)
 - val() - Returns the value of form fields
 
-    /**
-     * jQuery code:
-     * 
-     *   $("#btn1").click(function(){
-     *     alert("Text: " + $("#test").text());
-     *   });
-     *   $("#btn2").click(function(){
-     *     alert("HTML: " + $("#test").html());
-     *   });
-     *   $("#btn1").click(function(){
-     *     alert("Value: " + $("#test").val());
-     *   });
-     *   $("button").click(function(){
-     *     alert($("#w3s").attr("href"));
-     *   });
-     * 
-     * JS_Proxy based analog:
-     */
-    getContentAndAttributes() {
-      $("#btn1").click((event){
-        window.alert("Text: " + $("#test").text());
-      });
-      $("#btn2").click((event){
-        window.alert("HTML: " + $("#test").html());
-      });
-      $("#btn1").click((event){
-        window.alert("Value: " + $("#test").val());
-      });
-      $("button").click((event){
-        window.alert($("#w3s").attr("href"));
-      });
-    }
+Source code:
+
+     /**
+      * jQuery code:
+      * 
+      *   $("#btn1").click(function(){
+      *     alert("Text: " + $("#test").text());
+      *   });
+      *   $("#btn2").click(function(){
+      *     alert("HTML: " + $("#test").html());
+      *   });
+      *   $("#btn1").click(function(){
+      *     alert("Value: " + $("#test").val());
+      *   });
+      *   $("button").click(function(){
+      *     alert($("#w3s").attr("href"));
+      *   });
+      * 
+      * JS_Proxy based analog:
+      */
+     getContentAndAttributes() {
+       $("#btn1").click((event){
+         window.alert("Text: " + $("#test").text());
+       });
+       $("#btn2").click((event){
+         window.alert("HTML: " + $("#test").html());
+       });
+       $("#btn1").click((event){
+         window.alert("Value: " + $("#test").val());
+       });
+       $("button").click((event){
+         window.alert($("#w3s").attr("href"));
+       });
+     }
 
 #### Example 7. Set content and attributes
 Use the next methods to set content and attributes:
+
 - text() - Sets the text content of selected elements
 - html() - Sets the content of selected elements (including HTML markup)
 - val() - Sets the value of form fields
+
+Source code
 
     /**
      * jQuery code:
@@ -269,10 +277,13 @@ Use the next methods to set content and attributes:
 
 #### Example 8. jQuery add elements and content
 jQuery allows you easy add new elements or content via next methods:
+
 - append() - Inserts content at the end of the selected elements
 - prepend() - Inserts content at the beginning of the selected elements
 - after() - Inserts content after the selected elements
 - before() - Inserts content before the selected elements
+
+Source code:
 
     /**
      * jQuery code:
@@ -306,8 +317,11 @@ jQuery allows you easy add new elements or content via next methods:
 
 #### Example 9. jQuery remove elements and content
 jQuery helps to remove existing HTML elements and content via followinf methods:
+
 - remove() - Removes the selected element (and its child elements)
 - empty() - Removes the child elements from the selected element
+
+Source code:
 
     /**
      * jQuery code:
@@ -329,10 +343,13 @@ jQuery helps to remove existing HTML elements and content via followinf methods:
 
 #### Example 10. jQuery get and set CSS classes
 jQuery makes easy to manipulate the CSS of elements with below methods:
+
 - addClass() - Adds one or more classes to the selected elements
 - removeClass() - Removes one or more classes from the selected elements
 - toggleClass() - Toggles between adding/removing classes from the selected elements
 - css() - Sets or returns the style attribute
+
+Source code:
 
     /**
      * jQuery code:
@@ -383,12 +400,15 @@ jQuery makes easy to manipulate the CSS of elements with below methods:
 
 #### Example 11. jQuery dimensions
 With following jQuery methods you could easy to work with the dimensions of elements and browser window:
+
 - width()
 - height()
 - innerWidth()
 - innerHeight()
 - outerWidth()
 - outerHeight()
+
+Source code:
 
     /**
      * jQuery code:
@@ -473,9 +493,12 @@ With following jQuery methods you could easy to work with the dimensions of elem
 The jQuery helps move through HTML elements based on their relation to other elements. Yoy can start with one selection and move through that selection until you reach the elements you desire.
 
 You could traverse up with next methods:
+
 - parent()
 - parents()
 - parentsUntil()
+
+Source code:
 
     /**
      * jQuery code:
@@ -493,8 +516,11 @@ You could traverse up with next methods:
     }
 
 Use next methods to traverse down:
+
 - children()
 - find()
+
+Source code:
 
     /**
      * jQuery code:
@@ -514,6 +540,7 @@ Use next methods to traverse down:
     }
 
 Next methods help you traverse sideways in the DOM tree to find siblings of an element:
+
 - siblings()
 - next()
 - nextAll()
@@ -521,6 +548,8 @@ Next methods help you traverse sideways in the DOM tree to find siblings of an e
 - prev()
 - prevAll()
 - prevUntil()
+
+Source code:
 
     /**
      * jQuery code:
@@ -548,11 +577,14 @@ Next methods help you traverse sideways in the DOM tree to find siblings of an e
     }
 
 To narrow down the search elements you may use:
+
 - first(), 
 - last() 
 - eq()
 - filter() 
 - not()
+
+Source code:
 
     /**
      * jQuery code:
