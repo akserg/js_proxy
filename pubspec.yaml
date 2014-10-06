@@ -1,0 +1,12 @@
+name: js_proxy
+version: 0.1.0
+authors:
+- Sergey Akopkokhyants <akserg@gmail.org>
+description: Lite Proxy to work with JavaScript from Dart.
+homepage: https://github.com/akserg/js_prox
+environment:
+  sdk: '>=1.6.0 <2.0.0'
+dependencies:
+  browser: '>=0.10.0 <0.11.0'
+dev_dependencies:
+  unittest: '>=0.11.0 <0.12.0'
