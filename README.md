@@ -68,13 +68,13 @@ Next code print the current version of jQuery to console:
      * jQuery code:
      * 
      *   var ver = $().jquery;
-     *   console("jQuery version is " + ver);
+     *   console.log("jQuery version is " + ver);
      * 
      * JS_Proxy based analog:
      */
     printVersion() {
       var ver = $().jquery;
-      console("jQuery version is " + ver);
+      console.log("jQuery version is " + ver);
     }
 
 #### Example 2. jQuery selectors

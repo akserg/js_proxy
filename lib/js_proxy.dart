@@ -25,21 +25,17 @@ class JProxy {
   js.JsObject get object => _object;
   
   /**
-   * Constructor with optional proxied [JsObject].
+   * Generative constructor with optional proxied [JsObject].
    */
   JProxy([this._object]);
   
   /**
-   * Find object in [context] by [name] and proxied it.
+   * Named constructor will find object in [context] by [name] 
+   * and proxied it.
    */
   JProxy.fromContext(String name) {
     _object = js.context[name];
   }
-  
-  /**
-   * Return 'this' object
-   */
-  getThis() => this;
   
   /**
    * Call the instance to dynamically emulate a function. 
@@ -56,7 +52,7 @@ class JProxy {
       if (arg7 != null) args.add(arg7);
       if (arg8 != null) args.add(arg8);
       if (arg9 != null) args.add(arg9);
-      return new JProxy((_object as js.JsFunction).apply(args));
+      return _proxify((_object as js.JsFunction).apply(args));
     }
   
   /**
@@ -67,12 +63,15 @@ class JProxy {
    */
   @override
   dynamic noSuchMethod(Invocation invocation) {
-    if (invocation.isMethod) {
-      return _proxify(_object.callMethod(symbolAsString(invocation.memberName), _jsify(invocation.positionalArguments)));
-    } else if (invocation.isGetter) {
-      return _proxify(_object[symbolAsString(invocation.memberName)]);
-    } else if (invocation.isSetter) {
-      throw new Exception('The setter feature was not implemented yet.');
+    var prop = symbolAsString(invocation.memberName);
+    if (_object.hasProperty(prop)) {
+      if (invocation.isMethod) {
+        return _proxify(_object.callMethod(prop, _jsify(invocation.positionalArguments)));
+      } else if (invocation.isGetter) {
+        return _proxify(_object[prop]);
+      } else if (invocation.isSetter) {
+        throw new Exception('The setter feature was not implemented yet.');
+      }
     }
     return super.noSuchMethod(invocation);
   }
@@ -83,7 +82,7 @@ class JProxy {
   List _jsify(List params) {
     List res = [];
     params.forEach((item) {
-      if (item is Map || item is List) {
+      if (item is Map || item is Iterable) {
         res.add(new js.JsObject.jsify(item));
       } else {
         res.add(item);
