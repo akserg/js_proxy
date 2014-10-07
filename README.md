@@ -23,7 +23,7 @@ That code will has next analog on Dart:
 Usage
 -----
 
-Let's see usage based on jQuery framework. All results were checked on Dartium, Chrome, FireFox and IE.
+Let's see usage based on jQuery framework. All results were checked on Dartium, Chrome, Firefox and IE.
 
 #### HTML markups and styles
 Use CDN for quick and free access to jQuery 1.11. Add this script reference before all of Dart scripts:
