@@ -58,7 +58,7 @@ class JProxy {
   /**
    * This methods is invoked when a non-existent method on an object invokes.
    * The name of the method and the arguments of the invocation are passed 
-   * in an [Invocation]. This method returns a value, that value becomes the 
+   * in an [Invocation]. This method returns a value becomes the 
    * result of the original invocation.
    */
   @override
@@ -77,7 +77,7 @@ class JProxy {
   }
   
   /**
-   * Path through list of [params] and jsify each element of it.
+   * Path through list of [params] and jsify each Map or Iterable param.
    */
   List _jsify(List params) {
     List res = [];
